@@ -64,14 +64,14 @@ def main():
     #     muons = open_data(ifile('thr', pola, 'taulnu_taupipinu', 'muon'), 'muons')
     #     plot_mpipi(muons)
 
-    pola = 'zero'
+    pola = 'posi'
     taus = open_data(ifile('thr', pola, 'taulnu_taupipinu', 'tau'), 'taus')
     taus = taus[np.abs(taus.tau_pi_pdgid_mc) == 211].groupby('evtn').first()
     make_tau_mc_momentum(taus)
     
     # plot_pi0_mass(taus)
     # plot_pipi0_mass(taus)
-    # plot_pipi_costh(taus)
+    plot_pipi_costh(taus)
     plot_pipi_phi(taus)
 
 if __name__ == '__main__':

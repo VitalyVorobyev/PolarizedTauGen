@@ -4,7 +4,7 @@ import uproot
 mass_dict = {321 : 0.493677, 211 : 0.13957061}
 
 def open_data(ifile, treename):
-    df = uproot.open(ifile)[treename].pandas.df()
+    df = uproot.open(ifile)[treename].arrays(library="pd")
     print(df.head())
     print(df.shape)
     return df
